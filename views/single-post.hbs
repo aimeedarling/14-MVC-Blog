@@ -1,0 +1,40 @@
+{{!-- will see only one post, but can see comments and a form to submit comment--}}
+
+<div class="text-center">
+    <h2>{{title}}</h2>
+    <p>{{body}}</p>
+    <p>Created by {{user.userName}} on {{format_date date_created}}</p>
+    <input type = "hidden" id="hidden-id" value = "{{id}}">
+</div>
+
+
+<form class="form new-comment">
+    <div class="form-group">
+        <label for="project-desc">Comment:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+</div>
+
+{{#if comments.length}}
+<div class="col-md-6 project-list">
+    <h3>Comments:</h3>
+    {{#each comments}}
+    <div class="row mb-2">
+        <div class="col-md-8">
+            <p>
+                {{comment}}
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>Created by {{user.userName}} on {{format_date date_created}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+
+<script src="/JS/comment.js"></script>
