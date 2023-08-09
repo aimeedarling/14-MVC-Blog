@@ -1,0 +1,1 @@
+// const post_id = document.querySelector('#hidden-id')
