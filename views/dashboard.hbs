@@ -1,5 +1,14 @@
 {{!-- user can see own posts --}}
-{{#each posts as |post|}}
 
+{{#each userPosts}}
+<div class="post">
+    <h2 class="title">{{title}}</h2>
+    <p>{{body}}</p>
+    <p>Posted on: {{createdAt}}</p>
+</div>
 
+{{else}} 
+<h3>You haven't made any posts yet!</h3>
 {{/each}}
+
+

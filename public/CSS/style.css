@@ -1,0 +1,36 @@
+:root {
+    --pasta: #ffe5a8;
+    --marinara: #7A2626;
+    --pesto: #4c7461;
+    --squidink: #000000;
+    --mozzarella: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    font-family: Courier, monospace, arial;
+    background-color: var(--pasta)
+}
+
+
+header {
+    display: flex;
+    font-family: 'Brush Script MT', Courier, monospace;
+    justify-content: space-between;
+    gap: 14rem;
+    padding: 0 6rem;
+    background-color: var(--pesto);
+    color: var(--mozzarella);
+    border: .3rem solid var(--mozzarella);
+    border-radius: 1rem;
+    height: 15rem;
+    font-size: 3rem;
+}

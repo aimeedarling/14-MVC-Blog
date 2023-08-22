@@ -4,6 +4,7 @@ const router = require('express').Router()
 const {User, Post, Comment} = require('../models')
 const withAuth = require('../utils/auth')
 
+
 router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
@@ -38,6 +39,10 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+router.get('/dashboard', withAuth, (req, res) => {
+    res.redirect('/dashboard'); // Redirect to the user's dashboard
+});
+
 router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
@@ -65,6 +70,7 @@ router.get('/post/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 
 module.exports = router
